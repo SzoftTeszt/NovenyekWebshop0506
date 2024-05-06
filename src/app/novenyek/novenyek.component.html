@@ -1,0 +1,16 @@
+ <!-- {{Plants|json}}  -->
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div *ngFor="let p of Plants" class="col">
+      <div class="card h-100">
+        <img [src]="p.kepUrl" class="card-img-top" alt="Noveny">
+        <div class="card-body">
+          <h5 class="card-title">{{p.megnevezes}}</h5>
+          <p class="card-text">{{p.leiras}}</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">{{p.ar}} Ft</small>
+        </div>
+      </div>
+    </div>
+</div>

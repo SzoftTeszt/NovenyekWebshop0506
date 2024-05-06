@@ -1,0 +1,50 @@
+ <!-- {{Plants|json}}  -->
+
+ <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100">
+        <img [src]="newPlant.kepUrl" class="card-img-top" alt="Noveny">
+       
+        <div class="card-body">
+          <h5 class="card-title">
+            <input [(ngModel)]="newPlant.kepUrl" type="text" class="form-control" >
+            <input [(ngModel)]="newPlant.megnevezes" type="text" class="form-control" >
+          </h5>
+          <p class="card-text">          
+            <textarea [(ngModel)]="newPlant.leiras" class="form-control" rows="6"  ></textarea>
+        </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">
+            <input [(ngModel)]="newPlant.ar" type="number" class="form-control" > 
+            <button (click)="AddPlant()" type="button" class="btn btn-primary btn-sm">Add</button>
+           
+        </small>
+        </div>
+      </div>
+    </div>
+
+
+    <div *ngFor="let p of Plants" class="col">
+      <div class="card h-100">
+        <img [src]="p.kepUrl" class="card-img-top" alt="Noveny">
+       
+        <div class="card-body">
+          <h5 class="card-title">
+            <input [(ngModel)]="p.kepUrl" type="text" class="form-control" >
+            <input [(ngModel)]="p.megnevezes" type="text" class="form-control" >
+          </h5>
+          <p class="card-text">          
+            <textarea [(ngModel)]="p.leiras" class="form-control" rows="6"  ></textarea>
+        </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">
+            <input [(ngModel)]="p.ar" type="number" class="form-control" > 
+            <button (click)="SavePlant(p)" type="button" class="btn btn-primary btn-sm">Save</button>
+            <button (click)="DeletePlant(p)" type="button" class="btn btn-primary btn-sm">Delete</button>
+        </small>
+        </div>
+      </div>
+    </div>
+</div>
